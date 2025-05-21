@@ -9,155 +9,174 @@
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
+            line-height: 1.6;
         }
         .top-half {
-            background-color: green;
+            background-color: #2a6b3c;
             height: 50vh;
-            width: 100%;
+            min-height: 400px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             color: white;
             text-align: center;
+            padding: 20px;
         }
         .company-name {
             font-weight: bold;
             font-size: 2.5rem;
             margin-bottom: 1rem;
+            letter-spacing: 1px;
         }
         .tagline {
             font-size: 1.2rem;
-            white-space: nowrap;
-            margin-top: 0.5rem;
+            max-width: 600px;
+            margin: 1rem auto 0;
+            line-height: 1.5;
         }
 
-        /* RESTORED ORIGINAL IMAGE GRID */
+        /* IMAGE GRID IMPROVEMENTS */
         .image-grid {
-            width: 100%;
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 40px;
-            padding: 40px;
-            box-sizing: border-box;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            padding: 4rem 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
         }
         .image-container {
-            aspect-ratio: 2 / 1; /* Width 2x height (half-height rectangles) */
-            background-color: #f0f0f0;
-            border: 1px dashed #ccc;
+            aspect-ratio: 1 / 1;
+            background-color: #f8f9fa;
+            border: 1px solid #e9ecef;
             display: flex;
             justify-content: center;
             align-items: center;
-            border-radius: 12px; /* ← ONLY ADDED THIS LINE */
+            border-radius: 12px;
+            transition: transform 0.3s ease;
+            overflow: hidden;
+        }
+        .image-container:hover {
+            transform: translateY(-5px);
+        }
+        .grid-item {
+            text-align: center;
+        }
+        .grid-label {
+            margin-top: 1rem;
+            font-weight: 600;
+            color: #333;
+            font-size: 1.1rem;
         }
 
-        /* UPDATED CONTACT SECTION - LEFT ALIGNED */
+        /* ENHANCED CONTACT SECTION */
         .contact-section {
-            grid-column: 1 / -1;
-            text-align: left;
-            padding: 60px 100px;
-            margin-top: 40px;
-            border-top: 1px solid #eee;
-            margin-left: 0;
-            max-width: 100%;
+            background: #f8f9fa;
+            padding: 4rem 1.5rem;
         }
-
-        .contact-heading-container {
-            position: relative;
-            margin-bottom: 30px;
+        .contact-content-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
         }
-
         .contact-heading {
             font-size: 2rem;
-            color: #333;
-            text-align: left;
-            margin-bottom: 15px; /* Space for the line */
-            display: inline-block; /* Contain the line width */
+            color: #2a6b3c;
+            margin-bottom: 2rem;
+            position: relative;
+            padding-bottom: 1rem;
         }
-
-        .contact-heading-container::after {
+        .contact-heading::after {
             content: "";
             position: absolute;
             left: 0;
             bottom: 0;
-            width: 100%; /* <-- Expanded full width line */
-            height: 1px;
-            background-color: black;
+            width: 60px;
+            height: 3px;
+            background-color: #2a6b3c;
         }
-
         .contact-details {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            text-align: left;
-            max-width: 800px;
-            margin: 0;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
         }
         .contact-item {
-            margin-bottom: 15px;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
         }
         .contact-label {
-            font-weight: bold;
+            font-weight: 600;
             color: #555;
             display: block;
-            margin-bottom: 5px;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
         }
-        a.tel-link {
-            color: #0066cc;
+        .tel-link {
+            color: #2a6b3c;
             text-decoration: none;
+            transition: color 0.3s ease;
         }
-        a.tel-link:hover {
+        .tel-link:hover {
+            color: #1f4d2d;
             text-decoration: underline;
         }
-        .contact-content-wrapper {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
 
+        /* WHATSAPP SECTION IMPROVEMENTS */
         .whatsapp-section {
             display: flex;
-            justify-content: center; /* center horizontally */
-            align-items: center;     /* center vertically */
-            height: 100%;
-            border-left: 1px solid #eee;
-            padding-left: 30px; /* subtle padding for spacing */
-        }
-
-        .whatsapp-link {
-            display: flex;
             align-items: center;
-            gap: 10px;
-            color: #25D366;
+            justify-content: center;
+            padding-left: 3rem;
+            border-left: 2px solid #e9ecef;
+        }
+        .whatsapp-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 1rem 2rem;
+            background: #25D366;
+            color: white !important;
+            border-radius: 50px;
             text-decoration: none;
-            padding: 15px;
-            border: 1px solid #25D366;
-            border-radius: 8px;
-            transition: all 0.3s ease;
+            transition: transform 0.3s ease;
         }
-
         .whatsapp-link:hover {
-            background-color: #25D366;
-            color: white;
+            transform: translateY(-2px);
+            background: #1da64a;
         }
-
         .whatsapp-icon {
-            width: 24px;
-            height: 24px;
+            width: 28px;
+            height: 28px;
         }
 
-        /* Responsive adjustments */
         @media (max-width: 768px) {
+            .company-name {
+                font-size: 2rem;
+            }
+            .tagline {
+                font-size: 1rem;
+            }
+            .image-grid {
+                grid-template-columns: 1fr;
+                padding: 2rem 1rem;
+            }
             .contact-content-wrapper {
                 grid-template-columns: 1fr;
+                gap: 2rem;
             }
             .whatsapp-section {
-                border-left: none;
-                border-top: 1px solid #eee;
-                padding-top: 30px;
                 padding-left: 0;
+                border-left: none;
+                padding-top: 2rem;
+                border-top: 2px solid #e9ecef;
+            }
+            .contact-details {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -171,85 +190,61 @@
     </div>
 
     <div class="image-grid">
-        <div>
+        <div class="grid-item">
             <div class="image-container">Image 1</div>
-            <div style="text-align:center; margin-top: 8px;">Vehicle Insurance</div>
+            <div class="grid-label">Vehicle Insurance</div>
         </div>
-        <div>
+        <div class="grid-item">
             <div class="image-container">Image 2</div>
-            <div style="text-align:center; margin-top: 8px;">Health Insurance</div>
+            <div class="grid-label">Health Insurance</div>
         </div>
-        <div>
+        <div class="grid-item">
             <div class="image-container">Image 3</div>
-            <div style="text-align:center; margin-top: 8px;">Property Insurance</div>
+            <div class="grid-label">Property Insurance</div>
         </div>
-        <div>
+        <div class="grid-item">
             <div class="image-container">Image 4</div>
-            <div style="text-align:center; margin-top: 8px;">Life Insurance</div>
+            <div class="grid-label">Life Insurance</div>
         </div>
     </div>
-    
 
-    <!-- UPDATED CONTACT SECTION -->
-    <div class="contact-section">
-        <div class="contact-heading-container">
-            <h2 class="contact-heading">Contact Details</h2>
-        </div>
+    <section class="contact-section">
         <div class="contact-content-wrapper">
-            <div class="contact-details">
-                <div class="contact-item">
-                    <span class="contact-label">Name:</span>
-                    <span>John Doe</span>
-                </div>
-                <div class="contact-item">
-                    <span class="contact-label">Phone:</span>
-                    <a href="tel:+1234567890" class="tel-link">+1 (234) 567-890</a>
-                </div>
-                <div class="contact-item">
-                    <span class="contact-label">Alt. Phone:</span>
-                    <a href="tel:+1987654321" class="tel-link">+1 (987) 654-321</a>
-                </div>
-                <div class="contact-item">
-                    <span class="contact-label">Email:</span>
-                    <a href="mailto:contact@vrinsure.com">contact@vrinsure.com</a>
-                </div>
-                <div class="contact-item">
-                    <span class="contact-label">Address Line 1:</span>
-                    <span>123 Insurance Plaza</span>
-                </div>
-                <div class="contact-item">
-                    <span class="contact-label">Address Line 2:</span>
-                    <span>Suite 456</span>
-                </div>
-                <div class="contact-item">
-                    <span class="contact-label">City:</span>
-                    <span>Metropolis</span>
-                </div>
-                <div class="contact-item">
-                    <span class="contact-label">State:</span>
-                    <span>New York</span>
-                </div>
-                <div class="contact-item">
-                    <span class="contact-label">Country:</span>
-                    <span>United States</span>
-                </div>
-                <div class="contact-item">
-                    <span class="contact-label">PIN Code:</span>
-                    <span>10001</span>
+            <div>
+                <h2 class="contact-heading">Contact Us</h2>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <span class="contact-label">Name</span>
+                        <span>John Doe</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-label">Phone</span>
+                        <a href="tel:+1234567890" class="tel-link">+1 (234) 567-890</a>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-label">Alt. Phone</span>
+                        <a href="tel:+1987654321" class="tel-link">+1 (987) 654-321</a>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-label">Email</span>
+                        <a href="mailto:contact@vrinsure.com" class="tel-link">contact@vrinsure.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-label">Address</span>
+                        <span>123 Insurance Plaza<br>Suite 456<br>Metropolis, NY 10001</span>
+                    </div>
                 </div>
             </div>
-
-            <!-- MOVED WHATSAPP SECTION TO RIGHT SIDE -->
+            
             <div class="whatsapp-section">
                 <a href="https://wa.me/919492842867" class="whatsapp-link" target="_blank" rel="noopener noreferrer">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" class="whatsapp-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="whatsapp-icon">
                         <path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
                     </svg>
-                    Contact us on WhatsApp
+                    WhatsApp Chat
                 </a>
             </div>
         </div>
-    </div>
-
+    </section>
 </body>
 </html>
