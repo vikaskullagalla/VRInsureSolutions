@@ -46,27 +46,36 @@
             margin: 0 auto;
         }
         .image-container {
-            aspect-ratio: 1 / 1;
-            background-color: #f8f9fa;
-            border: 1px solid #e9ecef;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 12px;
-            transition: transform 0.3s ease;
-            overflow: hidden;
-        }
-        .image-container:hover {
-            transform: translateY(-5px);
-        }
+    aspect-ratio: 1 / 1;
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+    overflow: hidden;
+}
+
+.image-container:hover {
+    transform: translateY(-5px);
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.grid-label {
+    margin-top: 1rem;
+    font-weight: 600;
+    color: #333;
+    font-size: 1.1rem;
+}
+
         .grid-item {
             text-align: center;
-        }
-        .grid-label {
-            margin-top: 1rem;
-            font-weight: 600;
-            color: #333;
-            font-size: 1.1rem;
         }
 
         /* ENHANCED CONTACT SECTION */
@@ -191,21 +200,33 @@
 
     <div class="image-grid">
         <div class="grid-item">
-            <div class="image-container">Image 1</div>
+            <div class="image-container">
+                <img src="Motor-insurance-banner2.jpg" alt="Vehicle Insurance" />
+            </div>
             <div class="grid-label">Vehicle Insurance</div>
         </div>
+
         <div class="grid-item">
-            <div class="image-container">Image 2</div>
+            <div class="image-container">
+                <img src="health-insurance.jpg" alt="Health Insurance" />
+            </div>
             <div class="grid-label">Health Insurance</div>
         </div>
+
         <div class="grid-item">
-            <div class="image-container">Image 3</div>
+            <div class="image-container">
+                <img src="Property-Insurance.jpg" alt="Property Insurance" />
+            </div>
             <div class="grid-label">Property Insurance</div>
         </div>
+
         <div class="grid-item">
-            <div class="image-container">Image 4</div>
+            <div class="image-container">
+                <img src="Life-Insurance.jpg" alt="Life Insurance" />
+            </div>
             <div class="grid-label">Life Insurance</div>
         </div>
+
     </div>
 
     <section class="contact-section">
